@@ -1,0 +1,239 @@
+[
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.DesempenhoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Desempenho",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.DesempenhoController",
+    "Method": "Create",
+    "RelativePath": "api/Desempenho",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "desempenho",
+        "Type": "ProspAI_Sprint3.Models.Desempenho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.DesempenhoController",
+    "Method": "GetById",
+    "RelativePath": "api/Desempenho/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.DesempenhoController",
+    "Method": "Update",
+    "RelativePath": "api/Desempenho/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "desempenho",
+        "Type": "ProspAI_Sprint3.Models.Desempenho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.DesempenhoController",
+    "Method": "Delete",
+    "RelativePath": "api/Desempenho/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.FuncionarioController",
+    "Method": "GetAll",
+    "RelativePath": "api/Funcionario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.FuncionarioController",
+    "Method": "Create",
+    "RelativePath": "api/Funcionario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "funcionario",
+        "Type": "ProspAI_Sprint3.Models.Funcionario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.FuncionarioController",
+    "Method": "GetById",
+    "RelativePath": "api/Funcionario/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.FuncionarioController",
+    "Method": "Update",
+    "RelativePath": "api/Funcionario/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "funcionario",
+        "Type": "ProspAI_Sprint3.Models.Funcionario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.FuncionarioController",
+    "Method": "Delete",
+    "RelativePath": "api/Funcionario/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.ReclamacaoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Reclamacao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.ReclamacaoController",
+    "Method": "Create",
+    "RelativePath": "api/Reclamacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reclamacao",
+        "Type": "ProspAI_Sprint3.Models.Reclamacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.ReclamacaoController",
+    "Method": "GetById",
+    "RelativePath": "api/Reclamacao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.ReclamacaoController",
+    "Method": "Update",
+    "RelativePath": "api/Reclamacao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "reclamacao",
+        "Type": "ProspAI_Sprint3.Models.Reclamacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProspAI_Sprint3.Controllers.ReclamacaoController",
+    "Method": "Delete",
+    "RelativePath": "api/Reclamacao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

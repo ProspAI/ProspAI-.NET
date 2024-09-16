@@ -1,0 +1,57 @@
+﻿@model ProspAI_Sprint3.Models.Reclamacao
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Reclamacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nm_clie" class="control-label"></label>
+                <input asp-for="Nm_clie" class="form-control" />
+                <span asp-validation-for="Nm_clie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dt_recla" class="control-label"></label>
+                <input asp-for="Dt_recla" class="form-control" />
+                <span asp-validation-for="Dt_recla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Origem_recla" class="control-label"></label>
+                <input asp-for="Origem_recla" class="form-control" />
+                <span asp-validation-for="Origem_recla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Solucionada_recla" class="control-label"></label>
+                <input asp-for="Solucionada_recla" class="form-control" />
+                <span asp-validation-for="Solucionada_recla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assunto_recla" class="control-label"></label>
+                <input asp-for="Assunto_recla" class="form-control" />
+                <span asp-validation-for="Assunto_recla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_fun" class="control-label"></label>
+                <select asp-for="Id_fun" class ="form-control" asp-items="ViewBag.Id_fun"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

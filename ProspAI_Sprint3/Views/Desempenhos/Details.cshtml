@@ -1,0 +1,42 @@
+﻿@model ProspAI_Sprint3.Models.Desempenho
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Desempenho</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mes_desem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mes_desem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reclamacoes_resp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reclamacoes_resp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reclamacoes_solu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reclamacoes_solu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Funcionario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Funcionario.Email_fun)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id_desem">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

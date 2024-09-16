@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProspAI_Sprint3.Models.Reclamacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nm_clie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dt_recla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Origem_recla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solucionada_recla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assunto_recla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nm_clie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dt_recla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origem_recla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Solucionada_recla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assunto_recla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Funcionario.Email_fun)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_recla">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_recla">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_recla">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProspAI_Sprint3</name>
+    </assembly>
+    <members>
+        <member name="T:ProspAI_Sprint3.Migrations.initial">
+            <inheritdoc />
+        </member>
+        <member name="M:ProspAI_Sprint3.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProspAI_Sprint3.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProspAI_Sprint3.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ProspAI_Sprint3.Migrations.newmigration">
+            <inheritdoc />
+        </member>
+        <member name="M:ProspAI_Sprint3.Migrations.newmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProspAI_Sprint3.Migrations.newmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProspAI_Sprint3.Migrations.newmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

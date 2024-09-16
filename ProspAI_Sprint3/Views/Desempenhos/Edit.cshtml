@@ -1,0 +1,49 @@
+﻿@model ProspAI_Sprint3.Models.Desempenho
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Desempenho</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_desem" />
+            <div class="form-group">
+                <label asp-for="Mes_desem" class="control-label"></label>
+                <input asp-for="Mes_desem" class="form-control" />
+                <span asp-validation-for="Mes_desem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacoes_resp" class="control-label"></label>
+                <input asp-for="Reclamacoes_resp" class="form-control" />
+                <span asp-validation-for="Reclamacoes_resp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacoes_solu" class="control-label"></label>
+                <input asp-for="Reclamacoes_solu" class="form-control" />
+                <span asp-validation-for="Reclamacoes_solu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_fun" class="control-label"></label>
+                <select asp-for="Id_fun" class="form-control" asp-items="ViewBag.Id_fun"></select>
+                <span asp-validation-for="Id_fun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/ProspAI_Sprint3.props" />
+</Project>
