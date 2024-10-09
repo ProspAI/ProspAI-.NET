@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 using ProspAI_Sprint3.Models;
 using Microsoft.ML;
 using System.Data;
+using ProspAI_Sprint3.Persistencia.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,7 @@ builder.Services.AddScoped<IRepository<Desempenho>, DesempenhoRepository>();
 builder.Services.AddScoped<IService<Funcionario>, FuncionarioService>();
 builder.Services.AddScoped<IService<Reclamacao>, ReclamacaoService>();
 builder.Services.AddScoped<IService<Desempenho>, DesempenhoService>();
+builder.Services.AddScoped<ReclamacaoPredictionService>();
 
 // Contexto do banco de dados
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -63,7 +65,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "ProspAI API",
         Version = "v1",
-        Description = "API para ProspAI usando Oracle"
+        Description = "API para ProspAI usando Oracle, Microsoft.ML"
     });
 
     // Definindo o caminho dos comentários XML para o Swagger
