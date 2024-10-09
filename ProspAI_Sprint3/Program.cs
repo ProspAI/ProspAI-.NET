@@ -6,8 +6,29 @@ using ProspAI_Sprint3.Services;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using ProspAI_Sprint3.Models;
+using Microsoft.ML;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Caminho para o arquivo CSV
+string dataPath = "Data/funcionario_desempenho.csv";
+
+// Inicializar o MLContext
+MLContext mlContext = new MLContext();
+
+// Carregar os dados de treinamento
+IDataView dataView = mlContext.Data.LoadFromTextFile<FuncionarioDesempenho>(dataPath, hasHeader: true, separatorChar: ',');
+
+// Criar a pipeline de treinamento
+var pipeline = mlContext.Transforms.Concatenate("Features", new[] { "FuncionarioId", "ReclamacoesResp", "DesempenhoGeral" })
+    .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "ReclamacoesSolu", featureColumnName: "Features"));
+
+// Treinar o modelo
+var model = pipeline.Fit(dataView);
+
+// Salvar o modelo
+mlContext.Model.Save(model, dataView.Schema, "Data/ModeloReclamacoes.zip");
 
 // Repositórios
 builder.Services.AddScoped<IRepository<Funcionario>, FuncionarioRepository>();
