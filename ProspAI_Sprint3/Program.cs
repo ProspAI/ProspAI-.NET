@@ -6,8 +6,30 @@ using ProspAI_Sprint3.Services;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using ProspAI_Sprint3.Models;
+using Microsoft.ML;
+using System.Data;
+using ProspAI_Sprint3.Persistencia.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Caminho para o arquivo CSV
+string dataPath = "Data/funcionario_desempenho.csv";
+
+// Inicializar o MLContext
+MLContext mlContext = new MLContext();
+
+// Carregar os dados de treinamento
+IDataView dataView = mlContext.Data.LoadFromTextFile<FuncionarioDesempenho>(dataPath, hasHeader: true, separatorChar: ',');
+
+// Criar a pipeline de treinamento
+var pipeline = mlContext.Transforms.Concatenate("Features", new[] { "FuncionarioId", "ReclamacoesResp", "DesempenhoGeral" })
+    .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "ReclamacoesSolu", featureColumnName: "Features"));
+
+// Treinar o modelo
+var model = pipeline.Fit(dataView);
+
+// Salvar o modelo
+mlContext.Model.Save(model, dataView.Schema, "Data/ModeloReclamacoes.zip");
 
 // Repositórios
 builder.Services.AddScoped<IRepository<Funcionario>, FuncionarioRepository>();
@@ -18,6 +40,7 @@ builder.Services.AddScoped<IRepository<Desempenho>, DesempenhoRepository>();
 builder.Services.AddScoped<IService<Funcionario>, FuncionarioService>();
 builder.Services.AddScoped<IService<Reclamacao>, ReclamacaoService>();
 builder.Services.AddScoped<IService<Desempenho>, DesempenhoService>();
+builder.Services.AddScoped<ReclamacaoPredictionService>();
 
 // Contexto do banco de dados
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -42,7 +65,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "ProspAI API",
         Version = "v1",
-        Description = "API para ProspAI usando Oracle"
+        Description = "API para ProspAI usando Oracle, Microsoft.ML"
     });
 
     // Definindo o caminho dos comentários XML para o Swagger
